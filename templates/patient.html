@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Add Patient</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <input type="text" name="disease" placeholder="Disease" required>
+    <button type="submit">Add</button>
+</form>
+
+<h2>Patient Records</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Disease</th>
+    <th>Action</th>
+</tr>
+
+{% for p in patients %}
+<tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
+    <td><a href="/delete_patient/{{ p[0] }}">Delete</a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

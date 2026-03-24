@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>🏥 Hospital Management System</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/patient">Patient</a>
+    <a href="/appointment">Appointment</a>
+</nav>
+
+<!-- FLASH MESSAGE -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for msg in messages %}
+      <p class="flash">{{ msg }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

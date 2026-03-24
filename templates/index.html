@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <h2 class="welcome">Welcome to Smart Hospital System</h2>
+    <p class="subtitle">Manage everything in one place</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🧑‍⚕️ Patient Record</h3>
+            <p>Store and manage patient details</p>
+            <a href="/patient"><button>Open</button></a>
+        </div>
+
+        <div class="card">
+            <h3>💊 Tablet Reminder</h3>
+            <p>Set medicine schedules</p>
+            <a href="/reminder"><button>Open</button></a>
+        </div>
+
+        <div class="card">
+            <h3>📅 Appointment</h3>
+            <p>Book doctor appointments</p>
+            <a href="/appointment"><button>Open</button></a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

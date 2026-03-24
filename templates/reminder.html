@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>💊 Tablet Reminder</h2>
+
+    <form method="POST" class="form-box">
+        <input type="text" name="name" placeholder="Patient Name" required>
+        <input type="text" name="tablet" placeholder="Tablet Name" required>
+        <input type="time" name="time" required>
+        <button type="submit">Add Reminder</button>
+    </form>
+
+</div>
+
+<div class="table-container">
+
+    <h2>Reminder List</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Tablet</th>
+            <th>Time</th>
+        </tr>
+
+        {% for r in reminders %}
+        <tr>
+            <td>{{ r[0] }}</td>
+            <td>{{ r[1] }}</td>
+            <td>{{ r[2] }}</td>
+            <td>{{ r[3] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

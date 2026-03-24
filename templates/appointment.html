@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Book Appointment</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Patient Name" required>
+    <input type="date" name="date" required>
+    <button type="submit">Book</button>
+</form>
+
+<h2>Appointments</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+
+{% for a in appointments %}
+<tr>
+    <td>{{ a[0] }}</td>
+    <td>{{ a[1] }}</td>
+    <td>{{ a[2] }}</td>
+    <td><a href="/delete_appointment/{{ a[0] }}">Delete</a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
